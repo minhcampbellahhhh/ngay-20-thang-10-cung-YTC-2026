@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#211528">
+  <meta name="description" content="Một tấm thiệp nhỏ gửi lời chúc yêu thương nhân ngày Phụ nữ Việt Nam 20/10.">
+  <title>Gửi những điều dịu dàng — 20/10</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --night: #211528;
+      --plum: #38223c;
+      --rose: #f28eaa;
+      --rose-deep: #cf6488;
+      --cream: #fff7ed;
+      --muted: #e9d7e1;
+      --gold: #f4d59b;
+      --leaf: #8fc99e;
+      --safe-top: env(safe-area-inset-top, 0px);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { min-height: 100%; scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding: calc(22px + var(--safe-top)) 18px calc(28px + var(--safe-bottom));
+      display: grid;
+      place-items: center;
+      overflow-x: hidden;
+      color: var(--cream);
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(130, 73, 112, .42), transparent 48%),
+        radial-gradient(circle at 9% 77%, rgba(214, 113, 144, .10), transparent 23%),
+        linear-gradient(155deg, #26192d 0%, var(--night) 58%, #1b1421 100%);
+      font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+      line-height: 1.65;
+    }
+    body::after { background: radial-gradient(circle, rgba(242,142,170,.08), transparent 62%); }
+    body::before, body::after {
+      position: fixed; z-index: -1; content: ""; pointer-events: none;
+      width: 330px; height: 330px; border: 1px solid rgba(244, 213, 155, .09);
+      border-radius: 50%;
+    }
+    body::before { top: -205px; left: -150px; box-shadow: 0 0 0 28px rgba(244,213,155,.025), 0 0 0 58px rgba(244,213,155,.02); }
+    body::after { right: -195px; bottom: -220px; box-shadow: 0 0 0 28px rgba(242,142,170,.025), 0 0 0 58px rgba(242,142,170,.02); }
+    html.lb-lock, html.lb-lock body { overflow: hidden; }
+    button { font: inherit; }
+    .page { width: min(100%, 760px); margin: auto; text-align: center; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px; padding: 7px 14px;
+      border: 1px solid rgba(244,213,155,.26); border-radius: 999px;
+      background: rgba(255,255,255,.045); color: var(--gold);
+      font-size: .72rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase;
+    }
+    .eyebrow::before, .eyebrow::after { content: "✦"; font-size: .65rem; opacity: .8; }
+    h1 {
+      margin: 15px 0 0; color: var(--cream);
+      font-family: 'Dancing Script', cursive; font-size: clamp(3.2rem, 10vw, 5.7rem);
+      font-weight: 700; line-height: .98; letter-spacing: -.025em;
+      text-shadow: 0 5px 30px rgba(242,142,170,.16);
+    }
+    .subtitle { max-width: 540px; margin: 13px auto 0; color: var(--muted); font-size: clamp(.9rem, 2.5vw, 1.04rem); }
+    .subtitle strong { color: var(--rose); font-weight: 600; }
+    .date-line { margin: 10px 0 0; color: rgba(244,213,155,.82); font-size: .75rem; letter-spacing: .24em; }
+
+    .card {
+      position: relative; isolation: isolate; width: min(100%, 620px); margin: 28px auto 0; padding: 18px 22px 26px;
+      border: 1px solid rgba(255,255,255,.11); border-radius: 30px;
+      background: linear-gradient(145deg, rgba(255,255,255,.085), rgba(255,255,255,.035));
+      box-shadow: 0 28px 80px rgba(8,4,11,.34), inset 0 1px 0 rgba(255,255,255,.08);
+      backdrop-filter: blur(14px);
+    }
+    .card::after { position:absolute; inset:0; z-index:-2; content:""; border-radius:30px; background:linear-gradient(120deg,rgba(242,142,170,.10),transparent 36%,rgba(244,213,155,.07)); pointer-events:none; }
+    .card-topline { display:flex; align-items:center; justify-content:center; gap:10px; margin:0 auto 3px; color:rgba(244,213,155,.74); font-size:.67rem; font-weight:600; letter-spacing:.22em; text-transform:uppercase; }
+    .card-topline::before, .card-topline::after { width:32px; height:1px; content:""; background:linear-gradient(90deg,transparent,rgba(244,213,155,.55)); }
+    .card-topline::after { transform:scaleX(-1); }
+    .card::before { position:absolute; inset:9px; z-index:-1; content:""; border:1px solid rgba(244,213,155,.09); border-radius:23px; pointer-events:none; }
+    .flower-wrap { position: relative; width: min(350px, 86vw); margin: -2px auto 0; }
+    .flower-wrap::before {
+      position: absolute; z-index: -1; content:""; width: 210px; height: 210px; left:50%; top:35px; transform:translateX(-50%);
+      border-radius:50%; background:rgba(242,142,170,.13); filter:blur(46px);
+    }
+    #stage { display:block; width:100%; margin:auto; border-radius:22px; cursor:pointer; -webkit-tap-highlight-color:transparent; touch-action:manipulation; }
+    #stage:focus, #stage:active { outline: none; }
+    #stage:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+    #bouquet { transform-origin: 150px 250px; }
+    .flower { transition: transform 1.25s cubic-bezier(.16,1.15,.3,1), opacity .45s ease; }
+    .petal { transition: transform 1.05s cubic-bezier(.18,1.2,.32,1); }
+    #stems .stem { transform-box:fill-box; transform-origin:50% 100%; }
+    #bouquet.is-open #stems .stem { animation: stem-sway 2.2s ease-in-out both; }
+    #giftWrap { transform-box:fill-box; transform-origin:50% 5%; transition:transform .9s cubic-bezier(.2,.9,.3,1.2); }
+    #bouquet.is-open #giftWrap { transform:rotate(-2deg) translateY(3px); }
+    #giftBow { transform-box:fill-box; transform-origin:50% 50%; }
+    #bouquet.is-open #giftBow { animation: bow-pop .85s .25s cubic-bezier(.2,1.5,.4,1) both; }
+    @keyframes stem-sway { 0%{transform:rotate(0)} 35%{transform:rotate(2deg)} 68%{transform:rotate(-1.5deg)} 100%{transform:rotate(0)} }
+    @keyframes bow-pop { 0%{transform:scale(.75) rotate(-10deg)} 65%{transform:scale(1.18) rotate(5deg)} 100%{transform:scale(1) rotate(0)} }
+    .stem { stroke: var(--leaf); stroke-width: 3; fill:none; stroke-linecap:round; opacity:.94; }
+    .hint { min-height: 1.7em; margin: -5px 0 0; color: #e8b9cf; font-size: .86rem; transition: opacity .3s; }
+    .hint.pulse { animation: hint-pulse 1.8s ease-in-out infinite; }
+    @keyframes hint-pulse { 50% { opacity:.48; } }
+    .wishes { max-width: 500px; margin: 13px auto 0; }
+    .wish-label { margin:0 0 13px; color:rgba(233,215,225,.56); font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; }
+    .wishes p { margin: 0 0 .78em; color: #fff7ed; font-size: clamp(.94rem, 2.4vw, 1.05rem); opacity:0; transform:translateY(12px); transition: opacity .8s ease, transform .8s ease; }
+    .wishes p.show { opacity:1; transform:none; }
+    .wishes p:first-child { color: var(--gold); font-weight:600; }
+    .wishes p.sign { display:block; margin-top:1.25em; color:var(--rose); font-family:'Dancing Script',cursive; font-size:1.7rem; font-weight:600; line-height:1.12; }
+    .sign-name, .sign-club { display:inline; }
+    .sign-club { color:var(--gold); font-family:'Be Vietnam Pro',system-ui,sans-serif; font-size:.78rem; font-weight:700; letter-spacing:.11em; line-height:1.12; }
+    .sign-logo { display:block; width:150px; height:150px; margin:12px auto 0; object-fit:contain; border-radius:50%; filter:drop-shadow(0 5px 12px rgba(5,2,8,.24)); }
+    .divider { display:flex; align-items:center; gap:12px; width:min(240px,70%); margin:24px auto 17px; color:var(--gold); font-size:.72rem; letter-spacing:.18em; }
+    .divider::before, .divider::after { height:1px; flex:1; content:""; background:linear-gradient(90deg,transparent,rgba(244,213,155,.42)); }
+    .divider::after { transform:scaleX(-1); }
+
+    .photo-section { margin: 29px auto 0; }
+    .photo-heading { margin:0; color:var(--cream); font-family:'Dancing Script',cursive; font-size:1.9rem; font-weight:600; }
+    .photo-note { margin:2px 0 14px; color:rgba(233,215,225,.72); font-size:.77rem; }
+    .photos { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+    .photo-frame {
+      position:relative; display:grid; place-items:center; overflow:hidden; min-height:112px; aspect-ratio:1.12 / 1;
+      border:1px solid rgba(255,255,255,.14); border-radius:16px;
+      background:linear-gradient(145deg, rgba(242,142,170,.12), rgba(244,213,155,.045));
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
+      cursor:pointer; transition:transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+      user-select:none; -webkit-user-select:none; -webkit-touch-callout:none;
+    }
+    .photo-frame:hover { transform:translateY(-3px); border-color:rgba(244,213,155,.5); box-shadow:0 10px 25px rgba(9,4,12,.2), inset 0 1px 0 rgba(255,255,255,.08); }
+    .photo-frame:focus-visible { outline:3px solid var(--gold); outline-offset:3px; }
+    .photo-frame:active { transform:scale(.97); }
+    .photo-frame:nth-child(2) { background:linear-gradient(145deg, rgba(244,213,155,.11), rgba(168,132,183,.07)); }
+    .photo-frame:nth-child(3) { background:linear-gradient(145deg, rgba(143,201,158,.10), rgba(242,142,170,.07)); }
+    .photo-frame img {
+      display:none; position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+      -webkit-user-drag:none; user-select:none; -webkit-user-select:none;
+    }
+    .photo-frame.has-image img { display:block; }
+    /* Sửa lỗi: .photo-placeholder có display:grid nên thuộc tính hidden không có tác dụng */
+    .photo-placeholder[hidden] { display:none; }
+    .photo-placeholder { display:grid; gap:4px; place-items:center; padding:10px; color:rgba(255,247,237,.75); font-size:.72rem; }
+    .photo-placeholder .camera { color:var(--gold); font-size:1.2rem; }
+    /* Góc chỉ báo "phóng to" trên ô ảnh đã có ảnh */
+    .photo-frame.has-image::after {
+      content:""; position:absolute; right:10px; bottom:10px; width:13px; height:13px;
+      border-right:2px solid rgba(244,213,155,.92); border-bottom:2px solid rgba(244,213,155,.92);
+      border-radius:0 0 3px 0; opacity:.8; pointer-events:none;
+      transition: opacity .2s ease, transform .2s ease;
+    }
+    .photo-frame.has-image:hover::after { opacity:1; transform:translate(-2px,-2px) scale(1.12); }
+
+    /* ----- Lightbox xem ảnh phóng to ----- */
+    .lightbox {
+      position:fixed; inset:0; z-index:50;
+      display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px;
+      padding:22px; background:rgba(16,9,20,.9);
+      backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+      opacity:0; visibility:hidden; pointer-events:none;
+      transition:opacity .3s ease, visibility .3s ease;
+    }
+    .lightbox.is-open { opacity:1; visibility:visible; pointer-events:auto; }
+    .lb-figure {
+      margin:0; text-align:center; opacity:0; transform:scale(.96) translateY(8px);
+      transition:opacity .32s ease, transform .32s cubic-bezier(.2,.9,.3,1.1);
+    }
+    .lightbox.is-open .lb-figure { opacity:1; transform:none; }
+    .lb-figure.swap { animation:lb-swap .32s ease; }
+    @keyframes lb-swap { from { opacity:0; transform:translateY(12px) scale(.98); } to { opacity:1; transform:none; } }
+    #lbImage {
+      display:block; max-width:min(92vw, 920px); max-height:70vh; margin:auto; object-fit:contain;
+      border:1px solid rgba(255,255,255,.18); border-radius:16px;
+      box-shadow:0 30px 80px rgba(5,2,8,.6);
+      cursor:zoom-in; touch-action:none;
+      user-select:none; -webkit-user-select:none; -webkit-user-drag:none;
+      transition:transform .35s cubic-bezier(.2,.9,.3,1.05);
+    }
+    #lbImage.zoomed { cursor:zoom-out; }
+    #lbImage.panning { transition:none; }
+    .lb-caption { margin-top:12px; }
+    .lb-title { margin:0; color:var(--cream); font-size:.96rem; font-weight:500; }
+    .lb-meta { margin:4px 0 0; color:rgba(233,215,225,.62); font-size:.74rem; letter-spacing:.06em; }
+    .lb-count { color:var(--gold); font-weight:600; letter-spacing:.14em; }
+    .lb-close, .lb-nav {
+      position:absolute; display:grid; place-items:center; cursor:pointer;
+      width:46px; height:46px; border-radius:50%;
+      border:1px solid rgba(255,255,255,.22); background:rgba(255,255,255,.08);
+      color:var(--cream); line-height:1; -webkit-tap-highlight-color:transparent;
+      transition:transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .lb-close { top:calc(16px + var(--safe-top)); right:16px; font-size:1.15rem; }
+    .lb-nav { top:50%; transform:translateY(-50%); font-size:1.9rem; font-weight:300; padding-bottom:.1em; }
+    .lb-prev { left:14px; } .lb-next { right:14px; }
+    .lb-close:hover { background:rgba(255,255,255,.16); border-color:rgba(244,213,155,.5); transform:scale(1.05); }
+    .lb-nav:hover { background:rgba(255,255,255,.16); border-color:rgba(244,213,155,.5); transform:translateY(-50%) scale(1.06); }
+    .lb-close:active, .lb-nav:active { transform:scale(.94); }
+    .lb-nav:active { transform:translateY(-50%) scale(.94); }
+    .lb-close:focus-visible, .lb-nav:focus-visible { outline:3px solid var(--gold); outline-offset:3px; }
+    html.lb-lock .spark { z-index:60; }
+
+    /* ----- Thông báo nhỏ khi chặn chuột phải ----- */
+    .toast {
+      position:fixed; left:50%; bottom:calc(30px + var(--safe-bottom)); z-index:70;
+      transform:translate(-50%, 14px);
+      display:inline-flex; align-items:center; gap:9px;
+      padding:11px 19px; border-radius:999px;
+      border:1px solid rgba(244,213,155,.32);
+      background:rgba(33,21,40,.94); color:var(--cream);
+      font-size:.82rem; box-shadow:0 14px 40px rgba(5,2,8,.45);
+      opacity:0; visibility:hidden; pointer-events:none;
+      transition:opacity .3s ease, transform .3s ease, visibility .3s;
+    }
+    .toast::before { content:"✦"; color:var(--gold); font-size:.7rem; }
+    .toast.show { opacity:1; visibility:visible; transform:translate(-50%, 0); }
+
+    .controls { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin-top:20px; }
+    .button {
+      display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:44px; padding:10px 19px;
+      border:1px solid rgba(255,255,255,.20); border-radius:999px; color:var(--cream);
+      background:rgba(255,255,255,.075); font-size:.86rem; cursor:pointer;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .button:hover { transform:translateY(-2px); border-color:rgba(244,213,155,.48); background:rgba(255,255,255,.13); }
+    .button:active { transform:translateY(0); }
+    .button:focus-visible { outline:3px solid var(--gold); outline-offset:3px; }
+    .button.primary { border-color:transparent; color:#321b2a; background:linear-gradient(135deg,#f5d8a6,#f29ab3); font-weight:700; box-shadow:0 8px 24px rgba(211,111,146,.2); }
+    .button.primary:hover { background:linear-gradient(135deg,#ffe5b6,#f6a5bd); }
+    .button.secondary { border-color:rgba(242,142,170,.34); background:rgba(242,142,170,.09); }
+    .button.secondary:hover { background:rgba(242,142,170,.18); }
+    .button .button-icon { font-size:1.05rem; line-height:1; }
+    .hide { display:none !important; }
+    .footer { margin:20px 0 0; color:rgba(233,215,225,.52); font-size:.7rem; letter-spacing:.04em; }
+    .fall { position:fixed; z-index:5; top:-24px; width:11px; height:16px; border-radius:70% 0 70% 0; opacity:.82; pointer-events:none; animation:fall linear forwards; }
+    @keyframes fall { to { transform:translateY(110vh) rotate(540deg); opacity:.1; } }
+    .spark { position:fixed; z-index:20; left:0; top:0; width:7px; height:7px; border-radius:50%; pointer-events:none; background:var(--spark-color,#f4d59b); box-shadow:0 0 10px var(--spark-color,#f4d59b); animation:spark-burst .9s cubic-bezier(.12,.62,.35,1) forwards; }
+    @keyframes spark-burst { 0%{opacity:1; transform:translate(0,0) scale(.35)} 72%{opacity:.9} 100%{opacity:0; transform:translate(var(--dx),var(--dy)) scale(0)} }
+    @media (min-width:700px) { .card { padding:23px 38px 32px; margin-top:32px; } .photos { gap:14px; } .photo-frame { min-height:145px; border-radius:19px; } }
+    @media (max-width:560px) {
+      .lb-nav { width:40px; height:40px; font-size:1.55rem; }
+      .lb-prev { left:8px; } .lb-next { right:8px; }
+      .lb-close { top:calc(10px + var(--safe-top)); right:10px; width:40px; height:40px; }
+      #lbImage { max-width:calc(100vw - 108px); max-height:64vh; border-radius:12px; }
+    }
+    @media (max-width:420px) { body { padding-left:13px; padding-right:13px; } .card { padding:15px 15px 23px; border-radius:24px; margin-top:22px; } .photos { gap:7px; } .photo-frame { min-height:92px; border-radius:13px; } .photo-placeholder { font-size:.65rem; } }
+    @media (prefers-reduced-motion:reduce) {
+      *, *::before, *::after { scroll-behavior:auto !important; animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="eyebrow">Một lời thương gửi bạn</div>
+    <h1>Chúc mừng 20/10</h1>
+    <p class="subtitle">Gửi những <strong>bông hoa rực rỡ</strong> — cảm ơn bạn vì đã làm cho mỗi ngày bên nhau thêm vui và đáng nhớ.</p>
+    <p class="date-line">20 · 10 · 2026</p>
+
+ <section class="card" aria-label="Thiệp chúc mừng ngày Phụ nữ Việt Nam">
+      <div class="card-topline">Gửi từ những điều tử tế</div>
+      <div class="flower-wrap">
+        <svg id="stage" viewBox="0 0 300 340" role="button" tabindex="0" aria-label="Chạm vào bó hoa để mở thiệp" aria-describedby="hint">
+          <defs>
+            <linearGradient id="wrapA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f5a1bb"/><stop offset="1" stop-color="#d75f8c"/></linearGradient>
+            <linearGradient id="wrapB" x1="0" y1="0" x2="0.8" y2="1"><stop offset="0" stop-color="#e77ca0"/><stop offset="1" stop-color="#b84c78"/></linearGradient>
+            <filter id="softShadow" x="-40%" y="-30%" width="180%" height="180%"><feGaussianBlur in="SourceAlpha" stdDeviation="4"/><feOffset dy="5"/><feComponentTransfer><feFuncA type="linear" slope=".24"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <g id="bouquet" filter="url(#softShadow)">
+            <g id="stems"></g>
+            <path d="M150 259 C123 238 106 232 94 228 C110 220 123 222 139 239Z" fill="#70bd8b"/>
+            <path d="M150 259 C174 236 193 230 207 227 C194 221 177 225 160 240Z" fill="#87cf9d"/>
+            <g id="flowers"></g>
+            <g id="giftWrap">
+              <path d="M94 224 L206 224 L150 316Z" fill="url(#wrapA)"/>
+              <path d="M94 224 L150 252 L206 224 L150 316Z" fill="url(#wrapB)" opacity=".92"/>
+              <path d="M150 253 L150 315" stroke="rgba(255,255,255,.22)" stroke-width="2"/>
+              <g id="giftBow"><path d="M132 276 Q150 290 168 276" stroke="#f7d69e" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="150" cy="278" r="4" fill="#fff0ca"/></g>
+            </g>
+          </g>
+          <g aria-hidden="true" fill="#f4d59b" opacity=".78">
+            <path d="M47 108l2.2 6.8L56 117l-6.8 2.2L47 126l-2.2-6.8L38 117l6.8-2.2z"/>
+            <path d="M246 91l1.5 4.5L252 97l-4.5 1.5L246 103l-1.5-4.5L240 97l4.5-1.5z"/>
+            <circle cx="230" cy="178" r="2.5"/><circle cx="65" cy="183" r="2"/>
+          </g>
+        </svg>
+      </div>
+      <p id="hint" class="hint pulse">Chạm vào bó hoa để mở lời chúc</p>
+      <div id="wishes" class="wishes" aria-live="polite" aria-atomic="false">
+        <p class="wish-label">Một lời chúc dành riêng cho bạn</p>
+      </div>
+      <div class="divider" aria-hidden="true">WITH LOVE</div>
+      <section class="photo-section" aria-labelledby="photo-title">
+        <h2 id="photo-title" class="photo-heading">Một chút kỷ niệm</h2>
+        <p class="photo-note">Thêm những khoảnh khắc đẹp của YTC vào đây nhé — chạm vào ảnh để phóng to</p>
+        <div class="photos">
+          <div class="photo-frame" role="button" tabindex="0" aria-label="Xem phóng to ảnh kỷ niệm 01">
+            <img src="1.jpg" alt="Khoảnh khắc đáng nhớ của YTC">
+            <div class="photo-placeholder"><span class="camera" aria-hidden="true">✧</span><span>Ảnh kỷ niệm 01</span></div>
+          </div>
+          <div class="photo-frame" role="button" tabindex="0" aria-label="Xem phóng to ảnh kỷ niệm 02">
+            <img src="2.jpg" alt="Nụ cười và niềm vui của các thành viên">
+            <div class="photo-placeholder"><span class="camera" aria-hidden="true">✧</span><span>Ảnh kỷ niệm 02</span></div>
+          </div>
+          <div class="photo-frame" role="button" tabindex="0" aria-label="Xem phóng to ảnh kỷ niệm 03">
+            <img src="3.jpg" alt="Những người bạn tuyệt vời trong YTC">
+            <div class="photo-placeholder"><span class="camera" aria-hidden="true">✧</span><span>Ảnh kỷ niệm 03</span></div>
+          </div>
+          <div class="photo-frame" role="button" tabindex="0" aria-label="Xem phóng to ảnh kỷ niệm 04">
+            <img src="4.jpg" alt="Hoạt động và khoảnh khắc của YTC">
+            <div class="photo-placeholder"><span class="camera" aria-hidden="true">✧</span><span>Ảnh kỷ niệm 04</span></div>
+          </div>
+          <div class="photo-frame" role="button" tabindex="0" aria-label="Xem phóng to ảnh kỷ niệm 05">
+            <img src="5.jpg" alt="Kỷ niệm đẹp cùng các thành viên YTC">
+            <div class="photo-placeholder"><span class="camera" aria-hidden="true">✧</span><span>Ảnh kỷ niệm 05</span></div>
+          </div>
+          <div class="photo-frame" role="button" tabindex="0" aria-label="Xem phóng to ảnh kỷ niệm 06">
+            <img src="6.jpg" alt="Một ngày vui bên những người bạn trong YTC">
+            <div class="photo-placeholder"><span class="camera" aria-hidden="true">✧</span><span>Ảnh kỷ niệm 06</span></div>
+          </div>
+          <div class="photo-frame" role="button" tabindex="0" aria-label="Xem phóng to ảnh kỷ niệm 07">
+            <img src="7.jpg" alt="Lễ tân YTC ngày càng sáng ngời">
+            <div class="photo-placeholder"><span class="camera" aria-hidden="true">✧</span><span>Ảnh kỷ niệm 07</span></div>
+          </div>
+          <div class="photo-frame" role="button" tabindex="0" aria-label="Xem phóng to ảnh kỷ niệm 08">
+            <img src="8.jpg" alt="Cùng nhau tạo nên dấu ấn đáng nhớ nhất">
+            <div class="photo-placeholder"><span class="camera" aria-hidden="true">✧</span><span>Ảnh kỷ niệm 08</span></div>
+          </div>
+          <div class="photo-frame" role="button" tabindex="0" aria-label="Xem phóng to ảnh kỷ niệm 09">
+            <img src="9.jpg" alt="Cảm ơn các bạn là cảm ơn tất cả!">
+            <div class="photo-placeholder"><span class="camera" aria-hidden="true">✧</span><span>Ảnh kỷ niệm 09</span></div>
+          </div>
+        </div>
+      </section>
+      <div class="controls">
+        <button id="replay" class="button primary hide" type="button"><span class="button-icon">↻</span> <span>Xem lại lời chúc</span></button>
+        <button id="randomWish" class="button secondary hide" type="button"><span class="button-icon">✦</span> <span>Lời chúc khác</span></button>
+        <button id="music" class="button" type="button" aria-pressed="false">♫ <span>Bật nhạc</span></button>
+      </div>
+    </section>
+    <p class="footer">Được gửi bằng tất cả sự trân trọng và yêu thương.</p>
+  </main>
+
+  <!-- Khung xem ảnh phóng to -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Khung xem ảnh kỷ niệm phóng to" aria-hidden="true">
+    <button id="lbClose" class="lb-close" type="button" aria-label="Đóng khung xem ảnh">×</button>
+    <button id="lbPrev" class="lb-nav lb-prev" type="button" aria-label="Xem ảnh trước">‹</button>
+    <figure class="lb-figure">
+      <img id="lbImage" alt="" draggable="false">
+      <figcaption class="lb-caption">
+        <p id="lbTitle" class="lb-title"></p>
+        <p class="lb-meta"><span id="lbCounter" class="lb-count"></span><span> · Nhấp vào ảnh để phóng to, kéo để di chuyển</span></p>
+      </figcaption>
+    </figure>
+    <button id="lbNext" class="lb-nav lb-next" type="button" aria-label="Xem ảnh sau">›</button>
+  </div>
+
+  <!-- Thông báo khi chặn chuột phải -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <audio id="backgroundMusic" src="song.mp3" preload="auto" loop></audio>
+
+  <script>
+    /* Tùy chỉnh tên CLB và năm tại đây */
+    const CLUB = "CLB ĐÀO TẠO KỸ NĂNG TRẺ";
+    const WISH_BANK = [
+      [
+        "Nhân ngày Phụ nữ Việt Nam 20/10,",
+        `${CLUB} xin gửi đến bạn lời cảm ơn thật nhiều — vì sự nhiệt huyết, những ý tưởng tuyệt vời và nguồn năng lượng tích cực bạn mang đến cho tập thể.`,
+        "Chúc bạn luôn tự tin theo đuổi điều mình yêu, đủ dịu dàng với bản thân và đủ mạnh mẽ để biến mọi ước mơ thành hiện thực.",
+        "Mong mỗi ngày của bạn đều có thật nhiều niềm vui, bình an và những người luôn thương quý bạn."
+      ],
+      [
+        "Gửi đến cô gái luôn mang theo ánh nắng trong tim,",
+        "Cảm ơn bạn vì đã xuất hiện, đã lắng nghe và làm cho những ngày bình thường trở nên thật đáng nhớ.",
+        "Chúc bạn có thật nhiều can đảm để bắt đầu, kiên trì để đi tiếp và dịu dàng để yêu thương chính mình.",
+        "Mong những điều tốt đẹp nhất luôn tìm thấy bạn, theo cách nhẹ nhàng và bất ngờ nhất."
+      ],
+      [
+        "Một bông hoa xinh gửi tặng bạn ngày hôm nay,",
+        "Bạn không cần phải hoàn hảo để trở nên đặc biệt — chỉ cần là chính mình, bạn đã đủ rực rỡ rồi.",
+        "Chúc nụ cười luôn ở lại trên môi, bình yên ở lại trong tim và những ước mơ luôn có đường để nở hoa.",
+        "Cảm ơn bạn đã làm cho tập thể này ấm áp, vui vẻ và nhiều màu sắc hơn mỗi ngày."
+      ],
+      [
+        "20/10 này, mong bạn nhận được thật nhiều yêu thương,",
+        "Mong những nỗ lực thầm lặng của bạn được nhìn thấy và những điều bạn trao đi luôn được hồi đáp bằng chân thành.",
+        "Chúc bạn luôn giữ được sự tò mò, lòng tử tế và ngọn lửa nhỏ khiến bạn trở thành phiên bản tuyệt vời nhất của mình.",
+        "Hãy nhớ: bạn xứng đáng với những điều dịu dàng, hôm nay và cả những ngày sau nữa."
+      ],
+      [
+        "Gửi lời chúc ngọt ngào đến những đóa hoa của YTC,",
+        "Chúc bạn học tập thật vui, làm việc thật hăng say và luôn tìm thấy niềm vui trong từng hành trình nhỏ.",
+        "Mong bạn gặp đúng người, đúng cơ hội và đủ tự tin để nắm lấy những điều mình mong muốn.",
+        "Cảm ơn bạn vì đã cùng nhau tạo nên thật nhiều kỷ niệm đẹp."
+      ],
+      [
+        "Dành tặng bạn một lời chúc thật trong veo,",
+        "Chúc những ngày phía trước của bạn có nắng, có hoa, có những cuộc trò chuyện khiến lòng mình vui lên.",
+        "Nếu hôm nay mệt một chút, hãy nhớ nghỉ ngơi — bạn đã cố gắng rất nhiều và bạn làm tốt hơn mình nghĩ đấy.",
+        "Mong bạn luôn được yêu thương theo đúng cách bạn xứng đáng."
+      ]
+    ];
+    const SIGN = "Thân mến, các bạn nam";
+
+    const NS = "http://www.w3.org/2000/svg";
+    const spots = [
+      {x:150,y:91,s:1.2,c:"#f28eaa"},
+      {x:91,y:135,s:.94,c:"#f4d59b"},
+      {x:209,y:135,s:.98,c:"#d5a7ec"},
+      {x:119,y:174,s:.86,c:"#ef7298"},
+      {x:181,y:174,s:.9,c:"#ffc1d3"}
+    ];
+    const flowers = [];
+    const stage = document.getElementById("stage");
+    const stems = document.getElementById("stems");
+    const flowerLayer = document.getElementById("flowers");
+    const bouquet = document.getElementById("bouquet");
+    const wishBox = document.getElementById("wishes");
+    const hint = document.getElementById("hint");
+    const replay = document.getElementById("replay");
+    const randomWish = document.getElementById("randomWish");
+    const musicButton = document.getElementById("music");
+    const timers = new Set();
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let currentWishIndex = -1;
+
+    function chooseWishSet() {
+      let next = Math.floor(Math.random() * WISH_BANK.length);
+      if (WISH_BANK.length > 1 && next === currentWishIndex) next = (next + 1) % WISH_BANK.length;
+      currentWishIndex = next;
+      return WISH_BANK[next];
+    }
+
+    function svgElement(name, attrs) {
+      const node = document.createElementNS(NS, name);
+      Object.entries(attrs).forEach(([key, value]) => node.setAttribute(key, value));
+      return node;
+    }
+    function later(fn, delay) {
+      const id = window.setTimeout(() => { timers.delete(id); fn(); }, delay);
+      timers.add(id);
+      return id;
+    }
+
+    spots.forEach((spot) => {
+      stems.appendChild(svgElement("path", {class:"stem", d:`M150 263 Q${(150+spot.x)/2} ${(263+spot.y)/2+12} ${spot.x} ${spot.y}`}));
+      const group = svgElement("g", {class:"flower"});
+      const petals = [];
+      for (let i = 0; i < 8; i++) {
+        const petal = svgElement("ellipse", {cx:0, cy:-14, rx:7.5, ry:15.5, fill:spot.c, "fill-opacity":.96, stroke:"rgba(48,24,39,.12)", "stroke-width":.7, class:"petal"});
+        const wrapper = svgElement("g", {transform:`rotate(${i*45})`});
+        wrapper.appendChild(petal);
+        group.appendChild(wrapper);
+        petals.push(petal);
+      }
+      group.appendChild(svgElement("circle", {r:6.5, fill:"#fff0c4", stroke:"#e7bb72", "stroke-width":1}));
+      flowerLayer.appendChild(group);
+      flowers.push({group, spot, petals});
+    });
+
+    let isOpen = false;
+    function setFlowers(open) {
+      flowers.forEach(({group, spot, petals}, index) => {
+        const delay = open ? index * 125 : 0;
+        group.style.transitionDelay = `${delay}ms`;
+        group.style.transform = `translate(${spot.x}px, ${spot.y}px) scale(${open ? spot.s : .22})`;
+        petals.forEach((petal) => {
+          petal.style.transitionDelay = `${delay}ms`;
+          petal.style.transform = open ? "scale(1)" : "scale(.55, 1.2)";
+          petal.style.transformOrigin = "0 0";
+        });
+      });
+    }
+    setFlowers(false);
+
+    function petalRain() {
+      const colors = ["#f28eaa", "#f4d59b", "#d5a7ec", "#ffc1d3"];
+      for (let i = 0; i < 25; i++) {
+        const petal = document.createElement("span");
+        petal.className = "fall";
+        petal.style.left = `${Math.random() * 100}vw`;
+        petal.style.background = colors[i % colors.length];
+        petal.style.animationDuration = `${4 + Math.random() * 4}s`;
+        petal.style.animationDelay = `${Math.random() * 1.8}s`;
+        document.body.appendChild(petal);
+        later(() => petal.remove(), 10500);
+      }
+    }
+    function showWishes() {
+      const lines = chooseWishSet();
+      wishBox.replaceChildren();
+      const label = document.createElement("p");
+      label.className = "wish-label";
+      label.textContent = `Lời chúc số ${currentWishIndex + 1} · dành riêng cho bạn`;
+      wishBox.appendChild(label);
+      [...lines, SIGN].forEach((text, index, all) => {
+        const paragraph = document.createElement("p");
+        if (index === all.length - 1) {
+          paragraph.className = "sign";
+          const name = document.createElement("span");
+          name.className = "sign-name";
+          name.textContent = SIGN;
+          const lineBreak = document.createElement("br");
+          const club = document.createElement("span");
+          club.className = "sign-club";
+          club.textContent = CLUB;
+          const logo = document.createElement("img");
+          logo.className = "sign-logo";
+          logo.src = "logo.jpg";
+          logo.alt = "Logo CLB ĐÀO TẠO KỸ NĂNG TRẺ";
+          logo.loading = "lazy";
+          paragraph.append(name, lineBreak, club, logo);
+        } else {
+          paragraph.textContent = text;
+        }
+        wishBox.appendChild(paragraph);
+        later(() => paragraph.classList.add("show"), 450 + index * 1250);
+      });
+      later(() => { replay.classList.remove("hide"); randomWish.classList.remove("hide"); }, 450 + lines.length * 1250 + 700);
+    }
+    function openCard() {
+      if (isOpen) return;
+      isOpen = true;
+      bouquet.classList.add("is-open");
+      setMusic(true);
+      hint.classList.remove("pulse");
+      hint.textContent = "Một bó hoa nhỏ, một lời chúc thật lòng.";
+      stage.setAttribute("aria-label", "Bó hoa đã nở — lời chúc 20/10 đang hiện ra");
+      setFlowers(true);
+      if (!reducedMotion.matches) later(petalRain, 650);
+      showWishes();
+    }
+    function resetCard() {
+      timers.forEach(window.clearTimeout);
+      timers.clear();
+      document.querySelectorAll(".fall").forEach((petal) => petal.remove());
+      isOpen = false;
+      bouquet.classList.remove("is-open");
+      setFlowers(false);
+      wishBox.replaceChildren();
+      replay.classList.add("hide");
+      randomWish.classList.add("hide");
+      hint.textContent = "Chạm vào bó hoa để mở lời chúc";
+      hint.classList.add("pulse");
+      stage.setAttribute("aria-label", "Chạm vào bó hoa để mở thiệp");
+    }
+    stage.addEventListener("click", openCard);
+    stage.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") { event.preventDefault(); openCard(); }
+    });
+    replay.addEventListener("click", () => { resetCard(); later(openCard, 350); });
+    randomWish.addEventListener("click", () => { resetCard(); later(openCard, 350); });
+
+    /* Nhạc nền đọc từ song.mp3; Web Audio chỉ dùng cho tiếng chuông khung ảnh. */
+    let audioContext = null;
+    let musicOn = false;
+    const backgroundMusic = document.getElementById("backgroundMusic");
+    function playTone(frequency) {
+      if (!audioContext || audioContext.state !== "running") return;
+      const oscillator = audioContext.createOscillator();
+      const gain = audioContext.createGain();
+      const now = audioContext.currentTime;
+      oscillator.type = "sine";
+      oscillator.frequency.value = frequency;
+      gain.gain.setValueAtTime(.0001, now);
+      gain.gain.exponentialRampToValueAtTime(.035, now + .05);
+      gain.gain.exponentialRampToValueAtTime(.0001, now + 1.25);
+      oscillator.connect(gain);
+      gain.connect(audioContext.destination);
+      oscillator.start(now);
+      oscillator.stop(now + 1.3);
+    }
+    async function setMusic(enabled) {
+      if (musicOn === enabled) return;
+      try {
+        if (enabled) {
+          backgroundMusic.currentTime = 0;
+          await backgroundMusic.play();
+        } else {
+          backgroundMusic.pause();
+        }
+        musicOn = enabled;
+        musicButton.setAttribute("aria-pressed", String(musicOn));
+        musicButton.querySelector("span").textContent = musicOn ? "Tắt nhạc" : "Bật nhạc";
+      } catch (error) {
+        musicOn = false;
+        musicButton.setAttribute("aria-pressed", "false");
+        musicButton.querySelector("span").textContent = "Không phát được song.mp3";
+      }
+    }
+    function photoFireworks(frame) {
+      if (reducedMotion.matches) return;
+      const box = frame.getBoundingClientRect();
+      const originX = box.left + box.width / 2;
+      const originY = box.top + box.height / 2;
+      const palette = ["#f4d59b", "#f28eaa", "#ffe8bd", "#d5a7ec", "#a8dfb2"];
+      for (let burst = 0; burst < 2; burst++) {
+        const centerX = originX + (burst ? 24 : -20);
+        const centerY = originY + (burst ? -12 : 8);
+        for (let i = 0; i < 12; i++) {
+          const spark = document.createElement("i");
+          const angle = (Math.PI * 2 * i / 12) + (burst * .2);
+          const distance = 23 + Math.random() * 32;
+          spark.className = "spark";
+          spark.style.left = `${centerX}px`;
+          spark.style.top = `${centerY}px`;
+          spark.style.setProperty("--dx", `${Math.cos(angle) * distance}px`);
+          spark.style.setProperty("--dy", `${Math.sin(angle) * distance}px`);
+          spark.style.setProperty("--spark-color", palette[(i + burst * 2) % palette.length]);
+          document.body.appendChild(spark);
+          later(() => spark.remove(), 1000);
+        }
+      }
+    }
+    async function photoChime(index) {
+      try {
+        if (!audioContext) audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        if (audioContext.state === "suspended") await audioContext.resume();
+        const chord = [[783.99, 1046.5, 1318.5], [880, 1174.66, 1396.91], [698.46, 987.77, 1174.66]][index % 3];
+        chord.forEach((frequency, note) => later(() => playTone(frequency), note * 115));
+      } catch (error) {
+        /* Trình duyệt có thể tắt Web Audio; pháo hoa vẫn chạy bình thường. */
+      }
+    }
+
+    /* ===== MỚI: Khung xem ảnh phóng to (lightbox) ===== */
+    const lightbox = document.getElementById("lightbox");
+    const lbFigure = lightbox.querySelector(".lb-figure");
+    const lbImage = document.getElementById("lbImage");
+    const lbTitle = document.getElementById("lbTitle");
+    const lbCounter = document.getElementById("lbCounter");
+    const lbClose = document.getElementById("lbClose");
+    const lbPrev = document.getElementById("lbPrev");
+    const lbNext = document.getElementById("lbNext");
+    const photoFrames = Array.from(document.querySelectorAll(".photo-frame"));
+    const LB_ZOOM = 2.4; /* Độ phóng đại khi nhấp vào ảnh */
+    let lbIndex = -1;
+    let lbOpen = false;
+    let lbZoomOn = false;
+    let lbOriginX = 50;
+    let lbOriginY = 50;
+    let lbPanX = 0;
+    let lbPanY = 0;
+    let lbDragging = false;
+    let lbMoved = false;
+    let lbLastX = 0;
+    let lbLastY = 0;
+    let lbOpener = null;
+
+    function lbApply() {
+      lbImage.classList.toggle("zoomed", lbZoomOn);
+      if (lbZoomOn) {
+        lbImage.style.transformOrigin = `${lbOriginX}% ${lbOriginY}%`;
+        lbImage.style.transform = `translate(${lbPanX}px, ${lbPanY}px) scale(${LB_ZOOM})`;
+      } else {
+        lbImage.style.transformOrigin = "50% 50%";
+        lbImage.style.transform = "";
+      }
+    }
+    function lbResetZoom() {
+      lbZoomOn = false; lbPanX = 0; lbPanY = 0; lbOriginX = 50; lbOriginY = 50;
+      lbApply();
+    }
+    function lbRender(index, animate) {
+      const frame = photoFrames[index];
+      const img = frame.querySelector("img");
+      const label = frame.querySelector(".photo-placeholder span:not(.camera)");
+      lbIndex = index;
+      lbImage.src = img.currentSrc || img.src;
+      lbImage.alt = img.alt || "";
+      lbTitle.textContent = img.alt || (label ? label.textContent : `Ảnh kỷ niệm ${index + 1}`);
+      lbCounter.textContent = `${index + 1} / ${photoFrames.length}`;
+      lbResetZoom();
+      if (animate) {
+        lbFigure.classList.remove("swap");
+        void lbFigure.offsetWidth;
+        lbFigure.classList.add("swap");
+      }
+    }
+    function openLightbox(index) {
+      if (lbOpen) return;
+      lbOpener = photoFrames[index];
+      lbRender(index, false);
+      lbOpen = true;
+      lightbox.classList.add("is-open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.documentElement.classList.add("lb-lock");
+      window.setTimeout(() => lbClose.focus(), 0);
+    }
+    function closeLightbox() {
+      if (!lbOpen) return;
+      lbOpen = false;
+      lbResetZoom();
+      lightbox.classList.remove("is-open");
+      lightbox.setAttribute("aria-hidden", "true");
+      document.documentElement.classList.remove("lb-lock");
+      if (lbOpener) lbOpener.focus();
+    }
+    function lbStep(direction) {
+      if (!lbOpen) return;
+      const total = photoFrames.length;
+      for (let step = 1; step <= total; step++) {
+        const next = (lbIndex + direction * step + total * 2) % total;
+        if (!photoFrames[next].classList.contains("has-image")) continue;
+        if (next !== lbIndex) { lbRender(next, true); photoChime(next); }
+        return;
+      }
+    }
+    lbClose.addEventListener("click", closeLightbox);
+    lbPrev.addEventListener("click", () => lbStep(-1));
+    lbNext.addEventListener("click", () => lbStep(1));
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) closeLightbox();
+    });
+    /* Giữ phím Tab quay vòng trong khung xem ảnh */
+    lightbox.addEventListener("keydown", (event) => {
+      if (event.key !== "Tab") return;
+      const items = [lbClose, lbPrev, lbNext];
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    });
+    document.addEventListener("keydown", (event) => {
+      if (!lbOpen) return;
+      if (event.key === "Escape") { event.preventDefault(); closeLightbox(); }
+      else if (event.key === "ArrowRight") { event.preventDefault(); lbStep(1); }
+      else if (event.key === "ArrowLeft") { event.preventDefault(); lbStep(-1); }
+    });
+    /* Nhấp để phóng to tại đúng vị trí nhấp; kéo để di chuyển khi đã phóng to */
+    lbImage.addEventListener("pointerdown", (event) => {
+      if (!lbZoomOn) return;
+      lbDragging = true;
+      lbMoved = false;
+      lbLastX = event.clientX;
+      lbLastY = event.clientY;
+      lbImage.classList.add("panning");
+      lbImage.setPointerCapture(event.pointerId);
+    });
+    lbImage.addEventListener("pointermove", (event) => {
+      if (!lbDragging) return;
+      const dx = event.clientX - lbLastX;
+      const dy = event.clientY - lbLastY;
+      if (Math.abs(dx) + Math.abs(dy) > 3) lbMoved = true;
+      lbPanX += dx;
+      lbPanY += dy;
+      lbLastX = event.clientX;
+      lbLastY = event.clientY;
+      lbApply();
+    });
+    function lbEndDrag() {
+      lbDragging = false;
+      lbImage.classList.remove("panning");
+    }
+    lbImage.addEventListener("pointerup", lbEndDrag);
+    lbImage.addEventListener("pointercancel", lbEndDrag);
+    lbImage.addEventListener("click", (event) => {
+      if (lbMoved) { lbMoved = false; return; }
+      if (lbZoomOn) { lbResetZoom(); return; }
+      const rect = lbImage.getBoundingClientRect();
+      lbOriginX = Math.max(0, Math.min(100, ((event.clientX - rect.left) / rect.width) * 100));
+      lbOriginY = Math.max(0, Math.min(100, ((event.clientY - rect.top) / rect.height) * 100));
+      lbZoomOn = true;
+      lbApply();
+    });
+
+    /* Nhấp ô ảnh: pháo hoa + chuông, nếu ảnh đã tải thì mở khung phóng to */
+    photoFrames.forEach((frame, index) => {
+      const celebrate = () => {
+        photoFireworks(frame);
+        photoChime(index);
+        if (frame.classList.contains("has-image")) {
+          window.setTimeout(() => {
+            if (frame.classList.contains("has-image")) openLightbox(index);
+          }, 420);
+        }
+      };
+      frame.addEventListener("click", celebrate);
+      frame.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") { event.preventDefault(); celebrate(); }
+      });
+    });
+    musicButton.addEventListener("click", () => setMusic(!musicOn));
+
+    /* ===== MỚI: Bảo vệ ảnh — chặn chuột phải toàn trang, chặn kéo ảnh ===== */
+    const toast = document.getElementById("toast");
+    let toastTimer = null;
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add("show");
+      window.clearTimeout(toastTimer);
+      toastTimer = window.setTimeout(() => toast.classList.remove("show"), 2200);
+    }
+    document.addEventListener("contextmenu", (event) => {
+      event.preventDefault();
+      showToast("Ảnh kỷ niệm chỉ dành để xem thôi nhé!");
+    });
+    document.addEventListener("dragstart", (event) => {
+      if (event.target && event.target.closest && event.target.closest("img, .photo-frame, #lightbox")) {
+        event.preventDefault();
+      }
+    });
+
+    /* Ảnh để trống src=""; thay bằng đường dẫn ảnh của bạn để hiện ảnh trong khung. */
+    document.querySelectorAll(".photo-frame img").forEach((image) => {
+      const frame = image.closest(".photo-frame");
+      const placeholder = frame.querySelector(".photo-placeholder");
+      const showImage = () => { frame.classList.add("has-image"); placeholder.hidden = true; };
+      image.addEventListener("load", showImage);
+      image.addEventListener("error", () => { frame.classList.remove("has-image"); placeholder.hidden = false; });
+      if (image.getAttribute("src") && image.getAttribute("src").trim()) {
+        if (image.complete && image.naturalWidth > 0) showImage();
+        else image.addEventListener("load", showImage, {once:true});
+      }
+    });
+  </script>
+</body>
+</html>
