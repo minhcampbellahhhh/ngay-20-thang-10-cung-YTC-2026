@@ -126,6 +126,8 @@
     .photos { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
     .photo-frame {
       position:relative; display:grid; place-items:center; overflow:hidden; min-height:112px; aspect-ratio:1.12 / 1;
+      /* width:100% chặn trình duyệt suy rộng ô ảnh từ min-height qua aspect-ratio (lỗi tràn card trên mobile) */
+      width:100%;
       border:1px solid rgba(255,255,255,.14); border-radius:16px;
       background:linear-gradient(145deg, rgba(242,142,170,.12), rgba(244,213,155,.045));
       box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
